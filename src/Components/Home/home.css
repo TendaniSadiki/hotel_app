@@ -1,0 +1,159 @@
+body{
+    font-family: 'Nunito', sans-serif;
+    overflow: hidden;
+
+  }
+  .page {
+      height: 140px;
+      position:inherit;
+      margin-bottom: 90px;
+      margin-top: 40px   ;
+   }
+   .page .todo{
+    background:purple;
+    padding: 5px;
+    margin: 5px;
+    color: white;
+    width: 70%;
+    border-radius: 15px;
+     
+ }
+ .page .todo::placeholder{
+   color:white ;
+ }
+ .page h1{
+   color: rgb(0, 0, 0);
+   margin: 5px;
+ }
+  #todoContent{
+    position:inherit;
+    margin: 10 auto;
+    width: 100%;
+    background: #F6F5F3;
+    border-radius: 15px;
+    margin-top: 100px;
+   
+
+  }
+  
+  #todoContent h3{
+  margin: 4px;
+  }
+  #todoContent button ,.add-confirm-icon{
+    margin: 10px;
+    padding: 10px;
+    width: 100px;
+    cursor: pointer;
+    border-radius: 15px;
+    display: inline-flex;
+
+  }
+  .add-confirm-icon{
+    font-size: 3rem;
+  }
+  #todoContent button:hover{
+    color: #F6F5F3;
+    background-color: slateblue;
+  }
+  .datesContent{
+    display: inline-block;
+
+  }
+  .datesContent input{
+    margin: 15px;
+    padding: 8px;
+    border-radius: 15px;
+    cursor: pointer;
+    
+  }
+  .datesContent input:hover{
+    color: #F6F5F3;
+    background: rgba(22, 24, 27, 0.575);
+  }
+  
+  .dateWrapper{
+    display: inline-flex;
+    width:100%
+  }
+  .dateLeft{
+    width:80%;
+    float: left;
+    display:inline-flex;
+    
+  }
+  .dateRight{
+    width:20%;
+    float:right;
+  }
+  #todoContent ul{
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .emptyContent{
+    text-align: center;
+  }
+  #todoContent ul li{
+    list-style: none;
+    font-size: 15px;
+    margin: 10px;
+    height: 40px;
+    width: 100%;
+    
+  }
+  .left{
+  
+    width: 90%;
+    float: left;
+  }
+  .left span{
+    margin: 10px;
+    display: inline-flex;
+    cursor: pointer;
+  }
+  .right span{
+    margin: 20px;
+    display: inline-flex;
+    cursor: pointer;
+    margin-left: -20px;
+    float: left;
+    
+  }
+   .left .firstDate{
+    color: rgb(255, 255, 255);
+  }
+ .right{
+    float: right;
+    width: 10%;
+    display:-ms-inline-grid;
+ 
+  
+  }
+  
+  .todoList i {
+    margin: 5px;
+    cursor: pointer;
+   
+  }
+  .greenbar{
+    background-color: green;
+    width: 50px;
+    height: 50px;
+
+  }
+  .redbar{
+    background-color: red;
+    width: 50px;
+    height: 50px;
+  }
+  .redbar, .greenbar{
+    border-radius: 50%;
+  }
+   
+   @media screen and (min-width: 400px) {
+     body {
+       background-color: lavender   }
+   }
+   
+  
+  

@@ -1,0 +1,109 @@
+/*Mobile*/
+@media (max-width: 900px) {
+  .Navigation{
+    display: none;
+  }
+  
+  /*Mobile Nav Content*/
+  .MobileTopBar{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-bottom: white 1px ridge;
+  }
+  /*Open Menu Bar*/
+  .MobileTopBar .menubtn{
+    position: absolute;
+    right: 5%;
+    padding: 8px;
+    cursor: pointer;
+    font-size: 1.5rem; 
+  }
+  /*Close Menu Bar*/
+  .MobileTopBar .closebtn{
+    position: absolute;
+    right: 5%;
+    padding: 8px;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+  /*Hover Open Menu Bar*/
+  .MobileTopBar .fa-bars:hover{
+    color: blueviolet;
+    background: white;
+  }
+  /*Links*/
+  .MobileTopBar span i{
+    color: rgb(255, 254, 254);
+    font-size: 1rem;
+    padding: 10px;
+  }
+  .MobileTopBar span h4{
+    color: antiquewhite;
+    font-size:1rem
+  }
+  /*Links Content*/
+  .MobileTopBar .linksContainer {
+    display: flex;
+    flex-direction: column;
+    top: 60px;
+    position: absolute;
+    left: 0;
+    padding: 8px;
+    background: #181818;
+    width: 100%;
+  }
+}
+
+
+/*Computer screen*/
+@media (min-width: 900px) {
+  .MobileTopBar{
+    display: none;
+  }
+}
+.Navigation{
+  width: 100%;
+  height: 50px;
+  top: 0;
+  position: fixed;
+  left: 0;
+  background:#f6f5f3;
+
+}
+.linksContainer{
+  color: white;
+  background:#f6f5f3;
+
+}
+.rightNav{
+  text-align:center;
+}
+/*Break none*/
+.Navigation .linksContainer br{
+  display: none;
+}
+/*Icons by default*/
+.Navigation span i{
+  display: inline-block;
+  margin: 1.5vw;
+  color: rgb(0, 0, 0);
+  font-size: 1rem;
+}
+.Navigation span i:hover{
+  border-bottom: 2px solid rgb(255, 255, 255);
+  color:black;
+  }
+  
+/*Sign out button*/
+.Navigation .linksContainer .signout{
+  position: absolute;
+  right: 5%;
+  padding: 8px;
+  font-size: 1rem;
+}
+
