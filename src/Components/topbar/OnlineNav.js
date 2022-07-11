@@ -37,14 +37,20 @@ const logout = async () =>{
         <div>
             
             <div className="linksContainer">  
+                    
+                    <div className="rightNavContent">
                     <NavLink to="*" activestyle={{color: 'black'}} exact onClick={() => props.isMobile && props.closeMobileMenu()}><span></span>
                     </NavLink>
-                    <NavLink to="./Home"  activestyle={{color: 'black'}} exact onClick={() => {props.isMobile && props.closeMobileMenu(); window.location="/Home"}}><span><i><CgHome/>Home</i></span>
+                    <NavLink to="./Home"  activestyle={{color: 'black'}} exact onClick={() => {props.isMobile && props.closeMobileMenu(); window.location="/Home"}}><span><i>Home</i></span>
                     </NavLink>
-                    <NavLink to="./Profile" activestyle={{color: 'black'}} exact onClick={() =>{ props.isMobile && props.closeMobileMenu(); window.location="/Profile"}} ><span><i ><CgUser/>Profile</i></span>
+                    <NavLink to="./Profile" activestyle={{color: 'black'}} exact onClick={() =>{ props.isMobile && props.closeMobileMenu(); window.location="/Profile"}} ><span><i >Profile</i></span>
                     </NavLink>
-                    <NavLink to="./Login" activestyle={{color: 'black'}} exact onClick={logout} ><span className="signout"><i><CgLogOff />Log Out</i></span>
+                    <NavLink to="./Book" activestyle={{color: 'black'}} exact onClick={() =>{ props.isMobile && props.closeMobileMenu(); window.location="/Book"}} ><span><i >Book</i></span>
                     </NavLink>
+                    <NavLink to="./Login" activestyle={{color: 'black'}} exact onClick={logout} ><span ><i>Log Out</i></span>
+                    </NavLink>
+                    </div>
+                   
                     </div>
         </div>
     )

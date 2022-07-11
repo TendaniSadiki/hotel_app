@@ -87,23 +87,31 @@
 .Navigation .linksContainer br{
   display: none;
 }
+.Navigation span{
+  padding: 30px;
+}
 /*Icons by default*/
 .Navigation span i{
   display: inline-block;
-  margin: 1.5vw;
+  margin: 1vw;
   color: rgb(0, 0, 0);
   font-size: 1rem;
+  font-style: normal;
+  
 }
 .Navigation span i:hover{
-  border-bottom: 2px solid rgb(255, 255, 255);
+  border-bottom: 2px solid rgb(0, 0, 0);
   color:black;
   }
   
 /*Sign out button*/
-.Navigation .linksContainer .signout{
+.Navigation .linksContainer .rightNavContent{
   position: absolute;
   right: 5%;
   padding: 8px;
-  font-size: 1rem;
+  font-size: 40px;
+  font-weight: bold;
+  margin: -10px;
+  
 }
 

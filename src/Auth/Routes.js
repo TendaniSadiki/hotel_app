@@ -8,6 +8,7 @@ import Home from '../Components/Home/Home';
 import Login from '../Components/Login/Login';
 import Profile from '../Components/Profile/Profile';
 import SIgnup from '../Components/SIgnup/SIgnup';
+import Book from '../Components/Book/Book';
 
 
 const AuthRoutes = () =>{
@@ -34,6 +35,7 @@ const AuthRoutes = () =>{
                 <Route exact path="*" element={<Home/>}/>
                 <Route exact path="/Home" element={<Home/>}/>
                 <Route exact path="/Profile" element={<Profile/>}/>
+                <Route exact path="/Book" element={<Book/>}/>
                 </Routes>
             :
             //Offline Handler
