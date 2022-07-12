@@ -1,9 +1,11 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
 import {getAuth} from 'firebase/auth';
+
 const firebaseConfig = {
   apiKey: "AIzaSyAHC_tFwSv-nEdOmP8UawhFz8PqD8M_hpA",
   authDomain: "hotelapp-ead6b.firebaseapp.com",
+  databaseURL: "https://hotelapp-ead6b-default-rtdb.firebaseio.com",
   projectId: "hotelapp-ead6b",
   storageBucket: "hotelapp-ead6b.appspot.com",
   messagingSenderId: "458163058897",
