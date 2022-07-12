@@ -38,11 +38,15 @@ today = yyyy+'-'+mm+'-'+dd;
 
 
 return(
-    <div className="page">
+    <div className="home">
+      <br></br>
+      <br></br>
+      <br></br>
       <br></br>
       <br></br>
       <br></br>
       <h1>Hotel app </h1>
+
     </div>
     );
 }
