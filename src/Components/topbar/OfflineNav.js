@@ -9,7 +9,7 @@ function OfflineNav() {
             <br></br>
             <h1>Welcome</h1>
             <h3>Login to explore</h3>
-            <div className="rightNav" >To Do List</div>
+            <div className="rightNav" >Hotel App</div>
         </div>
     )
 }

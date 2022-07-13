@@ -3,7 +3,10 @@ import "./home.css";
 
 import { auth} from "../../firebase-config";
 
-
+import headerImg from '../images/284680_110923172739440.jpg';
+import seaView from '../images/sea-view-deluxe-suite.jpg';
+import familRoom from '../images/familyroom.jpg'
+import exclusiveRoom from '../images/exclusive-room.jpg'
 
 export default function Home(){ 
 
@@ -44,8 +47,41 @@ return(
       <br></br>
       <br></br>
       <br></br>
-      <br></br>
-      <h1>Hotel app </h1>
+      <div className='bookButton'>
+          <span className='bookNow'>Book now</span>
+      </div>
+      <div className="imgContent">
+        <img className="headerImg" src={headerImg}></img>
+        <h1>Welcome</h1>
+      </div>
+      <div className="viewRooms">
+        <h1>View Rooms</h1>
+        <div className="viewRoomsInfo">
+          <img src={seaView} alt="Sea View" className="imgOne"></img>
+          <div className="viewRoomBtns">
+          <button>Book</button>
+          <button>Discover</button>
+          </div>
+       
+        </div>
+        <div className="viewRoomsInfo">
+        <img src={familRoom} alt="Sea View" className="imgTwo"></img>
+          <div className="viewRoomBtns">
+          <button>Book</button>
+          <button>Discover</button>
+          </div>
+         
+        </div>
+        <div className="viewRoomsInfo">
+        <img src={exclusiveRoom} alt="Sea View" className="imgThree"></img>
+          <div className="viewRoomBtns">
+          <button>Book</button>
+          <button>Discover</button>
+          </div>
+          
+        </div>
+      </div>
+      
 
     </div>
     );
