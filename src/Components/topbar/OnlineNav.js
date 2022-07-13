@@ -39,9 +39,6 @@ const logout = async () =>{
             <div className="linksContainer">  
                     <div className='leftNavContent'>
                     <h1 >Logo</h1>
-                    <div className='bookButton'>
-                        <span>Book now</span>
-                    </div>
                     </div>
                     <div className="rightNavContent">
                     <NavLink to="*" activestyle={{color: 'black'}} exact onClick={() => props.isMobile && props.closeMobileMenu()}><span></span>

@@ -16,7 +16,7 @@ body{
       
   }
     .form-box{
-      background: #3500D3;
+    
         width:380px;
         height:350px;
         padding:20px;
@@ -37,10 +37,10 @@ body{
     }
 
     .form-box h1{
-      color:white;
+      color:rgb(0, 0, 0);
     }
     .form-box .NavLink{
-      color:white;
+      color:rgb(0, 0, 0);
       text-decoration:none;
     }
   .header-form{
