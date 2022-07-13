@@ -7,10 +7,7 @@ import React, { useState } from "react";
 /*Online Nav Bar*/
 //Topbar Icons
 import {NavLink} from 'react-router-dom';
-import {CgHome} from "react-icons/cg";
-import {CgUser} from "react-icons/cg";
 
-import {CgLogOff} from "react-icons/cg";
 function OnlineNav(props) {
     const [loginState, setLoginState] = useState(null);
     const auth = getAuth();
@@ -19,6 +16,7 @@ function OnlineNav(props) {
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/firebase.User
         setLoginState(true)
+        
         // ...
       } 
       else{
