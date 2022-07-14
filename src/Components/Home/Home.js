@@ -10,6 +10,8 @@ import exclusiveRoom from '../images/exclusive-room.jpg'
 import roundHouse from '../images/LaRotonde_Site_Actu_248x248-VCC_5.jpg'
 import lobby from '../images/LeNegresco-LeChantecler_5.jpg'
 
+import bathImg from '../images/LeNegresco_JuniorSuiteVueMer_2.jpg'
+
 import bar from '../images/bar.jpg'
 
 export default function Home(props){ 
@@ -147,11 +149,42 @@ return(
       </div>
       <div className="roomInfo">
         <div className="roomLeft">
-          <h1>Left</h1>
+          <img src={bathImg}></img>
         </div>
         <div className="roomRight">
-          <h1>Right</h1>
+          <h1>In Your Room</h1>
+          <ul>
+           <li> Non-smoking </li>
+           <li> Air-conditioning </li>
+           <li> Desk</li>
+           <li> Direct telephone</li>
+           <li> Free high speed wireless internet access (Wifi)</li>
+           <li> Flat screen television</li>
+           <li> Mini bar</li>
+           <li> Safe</li>
+           <li> Hospitality tray with coffee and tea</li>
+           <li> Maximum number of people in room: 2 adults and 1 child under 12</li>  
+            </ul>
         </div>
+      </div>
+      <div className="roomInfoSec">
+      <div className="roomRightSec">
+          <h1>IN YOUR BATHROOM</h1>
+          <ul>
+           <li> Shower and/or bathtub</li>
+           <li> Separate toilet </li>
+           <li> Hair dryer</li>
+           <li> Hospitality</li>
+           <li> Products</li>
+           <li> Bathrobe and soft</li>
+           <li> Slippers</li>
+           
+            </ul>
+        </div>
+        <div className="roomLeftSec">
+          <img src={bathImg}></img>
+        </div>
+       
       </div>
       
 
