@@ -1,6 +1,6 @@
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 import "./home.css";
-
+import { NavLink } from "react-router-dom";
 import { auth} from "../../firebase-config";
 
 import headerImg from '../images/284680_110923172739440.jpg';
@@ -12,7 +12,7 @@ import lobby from '../images/LeNegresco-LeChantecler_5.jpg'
 
 import bar from '../images/bar.jpg'
 
-export default function Home(){ 
+export default function Home(props){ 
 
     
     const [tempUidd, setTempUidd] = useState("");
@@ -42,10 +42,7 @@ if(mm<10){
   mm='0'+mm
 } 
 today = yyyy+'-'+mm+'-'+dd;
-const MyFunction = () => {
-  alert("hi")
-  
-}
+
 
 return(
     <div className="home">
@@ -54,7 +51,7 @@ return(
       <br></br>
       <br></br>
       <br></br>
-      <div className='bookButton' onclick={MyFunction}>
+      <div className='bookButton' >
           <span className='bookNow' >Book now</span>
       </div>
       <div className="imgContent">
@@ -72,7 +69,10 @@ return(
           <div className="viewRoomBtns">
           <button>Book</button>
           <br></br>
+          <NavLink to="/" onClick={() =>{window.location="/Seaview"}} >
           <button>Discover</button>
+              </NavLink>
+         
           <hr></hr>
           </div>
        
@@ -82,7 +82,10 @@ return(
           <div className="viewRoomBtns">
           <button>Book</button>
           <br></br>
+          <NavLink to="/" onClick={() =>{window.location="/FamilyDeluxe"}} >
           <button>Discover</button>
+              </NavLink>
+
           <hr></hr>
           </div>
          
@@ -92,7 +95,9 @@ return(
           < div className="viewRoomBtns">
           <button>Book</button>
           <br></br>
+          <NavLink to="/" onClick={() =>{window.location="/Exclusive"}} >
           <button>Discover</button>
+              </NavLink>
           <hr></hr>
           </div>
           

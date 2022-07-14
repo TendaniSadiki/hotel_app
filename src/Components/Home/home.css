@@ -155,9 +155,13 @@ body{
     }
     .roomInfo{
       width: 100%;
-      background: yellow;
+      
+
       height: 500px;
       margin-top: 70px;
+    }
+    .roomLeft, .roomRight{
+      height: 600px;
     }
     .roomLeft{
       width: 50%;

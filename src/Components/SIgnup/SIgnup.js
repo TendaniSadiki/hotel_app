@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { createUserWithEmailAndPassword, getAuth, sendSignInLinkToEmail ,onAuthStateChanged, sendEmailVerification } from "firebase/auth";
+import { createUserWithEmailAndPassword,onAuthStateChanged} from "firebase/auth";
 import { NavLink } from "react-router-dom";
 import './signup.css';
-import { async } from "@firebase/util";
+
 import { auth } from "../../firebase-config";
 import Loader from "../Loader/Loader";
 

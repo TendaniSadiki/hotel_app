@@ -9,6 +9,10 @@ import Login from '../Components/Login/Login';
 import Profile from '../Components/Profile/Profile';
 import SIgnup from '../Components/SIgnup/SIgnup';
 import Book from '../Components/Book/Book';
+import SeaView from '../Components/Discover/SeaView/SeaView';
+import FamilyDeluxe from '../Components/Discover/FamilyDeluxe/FamilyDeluxe';
+import Exclusive from '../Components/Discover/Exclusive/Exclusive';
+
 
 
 const AuthRoutes = () =>{
@@ -36,6 +40,12 @@ const AuthRoutes = () =>{
                 <Route exact path="/Home" element={<Home/>}/>
                 <Route exact path="/Profile" element={<Profile/>}/>
                 <Route exact path="/Book" element={<Book/>}/>
+                {
+                //Offline Handler
+                }
+                <Route exact path="/SeaView" element={<SeaView/>}/>
+                <Route exact path="/FamilyDeluxe" element={<FamilyDeluxe/>}/>
+                <Route exact path="/Exclusive" element={<Exclusive/>}/>
                 </Routes>
             :
             //Offline Handler
