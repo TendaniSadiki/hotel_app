@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import "./home.css";
 import { NavLink } from "react-router-dom";
 import { auth} from "../../firebase-config";
+import { getDatabase, ref, child, get } from "firebase/database";
+
+import PopUp from "../Popup/Popup";
 
 import headerImg from '../images/284680_110923172739440.jpg';
 import seaView from '../images/sea-view-deluxe-suite.jpg';
@@ -23,6 +26,17 @@ export default function Home(props){
       auth.onAuthStateChanged((user) => {
         if (user) {
           // read
+          const dbRef = ref(getDatabase());
+get(child(dbRef, `Hotels`)).then((snapshot) => {
+  if (snapshot.exists()) {
+    console.log(snapshot.val());
+    
+  } else {
+    console.log("No data available");
+  }
+}).catch((error) => {
+  console.error(error);
+});
         
         } else if (!user) {
             window.location="/Login";
@@ -33,17 +47,7 @@ export default function Home(props){
   
     // add
    
-var today = new Date();
-let dd = today.getDate();
-let mm = today.getMonth()+1; //January is 0 so need to add 1 to make it 1!
-let yyyy = today.getFullYear();
-if(dd<10){
-  dd='0'+dd
-} 
-if(mm<10){
-  mm='0'+mm
-} 
-today = yyyy+'-'+mm+'-'+dd;
+
 
 
 return(
@@ -54,8 +58,11 @@ return(
       <br></br>
       <br></br>
       <div className='bookButton' >
-          <span className='bookNow' >Book now</span>
+          
+          <PopUp/>
+
       </div>
+      
       <div className="imgContent">
         <img className="headerImg" src={headerImg}></img>
         <h1>Welcome</h1>
