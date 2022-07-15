@@ -20,9 +20,9 @@ today = yyyy+'-'+mm+'-'+dd;
 
     const writeToDatabase = () => {
        
-        
+    
         setDate("");
-       
+        console.log(setDate)
       };
 
     return(
