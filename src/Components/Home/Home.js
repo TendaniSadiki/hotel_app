@@ -30,6 +30,23 @@ export default function Home(props){
 get(child(dbRef, `Hotels`)).then((snapshot) => {
   if (snapshot.exists()) {
     console.log(snapshot.val());
+    const Key = snapshot.key;
+    const Data = snapshot.val();
+    console.log(Key);
+    console.log(Data);
+    snapshot.forEach((Data) => {
+      const childKeys = Data.key;
+      const childDatas = Data.val();
+      console.log(childKeys);
+      console.log(childDatas);
+      Data.forEach((childDatas) =>{
+        const Datas = childDatas.key;
+        const Keys = childDatas.val();
+        console.log(Datas +": " + Keys);
+      })
+      // ...
+      
+    })
     
   } else {
     console.log("No data available");
