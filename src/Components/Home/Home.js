@@ -32,13 +32,9 @@ get(child(dbRef, `Hotels`)).then((snapshot) => {
     console.log(snapshot.val());
     const Key = snapshot.key;
     const Data = snapshot.val();
-    console.log(Key);
-    console.log(Data);
     snapshot.forEach((Data) => {
       const childKeys = Data.key;
       const childDatas = Data.val();
-      console.log(childKeys);
-      console.log(childDatas);
       Data.forEach((childDatas) =>{
         const Datas = childDatas.key;
         const Keys = childDatas.val();
@@ -84,12 +80,14 @@ return(
         <img className="headerImg" src={headerImg}></img>
         <h1>Welcome</h1>
       </div>
+      
       <div className="viewRooms">
         <br></br>
 
         <h1>View Rooms</h1>
         <br></br>
         <br></br>
+        
         <div className="viewRoomsInfo">
           <img src={seaView} alt="Sea View" className="imgOne"></img>
           <div className="viewRoomBtns">
