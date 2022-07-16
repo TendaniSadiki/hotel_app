@@ -35,10 +35,16 @@ get(child(dbRef, `Hotels`)).then((snapshot) => {
     snapshot.forEach((Data) => {
       const childKeys = Data.key;
       const childDatas = Data.val();
+      let results =  Data.val();
+      let arr = [];
+      const obj  = results;
+      arr.push(obj);
+      console.log(arr);
+      
       Data.forEach((childDatas) =>{
         const Datas = childDatas.key;
         const Keys = childDatas.val();
-        console.log(Datas +": " + Keys);
+       
       })
       // ...
       
