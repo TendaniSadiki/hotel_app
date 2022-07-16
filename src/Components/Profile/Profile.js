@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { getAuth } from "firebase/auth";
+import PopUp from "../Popup/Popup";
 
 
 const Profile = () =>{
@@ -22,7 +23,16 @@ if (user !== null) {
             <br></br>
             <br></br>
             <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
             <p>Profile page</p>
+            <div className='bookButton' >
+          
+          <PopUp/>
+
+      </div>
                         <li>
                             <div>
                                 <span> Email:{user.email}</span>
