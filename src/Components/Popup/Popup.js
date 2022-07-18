@@ -32,6 +32,11 @@ today = yyyy+'-'+mm+'-'+dd;
           adults: adults,
           children: children
         });
+        alert("Searching for book")
+        setcheckInDate("")
+       setExDate("")
+       setAdult("")
+       setChildren("")
       };
 
     return(
