@@ -13,7 +13,7 @@ import SeaView from '../Components/Discover/SeaView/SeaView';
 import FamilyDeluxe from '../Components/Discover/FamilyDeluxe/FamilyDeluxe';
 import Exclusive from '../Components/Discover/Exclusive/Exclusive';
 import Rooms from '../Components/Rooms/Rooms';
-
+import Discover from '../Components/Discover/Discover';
 
 
 
@@ -45,6 +45,7 @@ const AuthRoutes = () =>{
                 {
                 //Offline Handler
                 }
+                <Route exact path="/Discover" element={<Discover/>}/>
                 <Route exact path="/SeaView" element={<SeaView/>}/>
                 <Route exact path="/FamilyDeluxe" element={<FamilyDeluxe/>}/>
                 <Route exact path="/Exclusive" element={<Exclusive/>}/>

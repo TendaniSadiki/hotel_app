@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import "./home.css";
 import { NavLink } from "react-router-dom";
-import { auth} from "../../firebase-config";
-import { getDatabase, ref, child, get } from "firebase/database";
+import { auth, db} from "../../firebase-config";
+import { getDatabase, ref, child, get, push } from "firebase/database";
 
 import PopUp from "../Popup/Popup";
 
@@ -17,7 +17,7 @@ import bathImg from '../images/LeNegresco_JuniorSuiteVueMer_2.jpg'
 
 import bar from '../images/bar.jpg'
 
-export default function Home(props){ 
+export default function Home(   ){ 
 
     
     const [tempUidd, setTempUidd] = useState("");
@@ -40,10 +40,15 @@ get(child(dbRef, `Hotels`)).then((snapshot) => {
       const obj  = results;
       arr.push(obj);
       console.log(arr);
+      push(ref(db, `HotelInfo`), {
+        hotelInformation: arr
+        
+      });
       
       Data.forEach((childDatas) =>{
         const Datas = childDatas.key;
         const Keys = childDatas.val();
+     
        
       })
       // ...
@@ -99,8 +104,8 @@ return(
           <div className="viewRoomBtns">
           <button>Book</button>
           <br></br>
-          <NavLink to="/" onClick={() =>{window.location="/Seaview"}} >
-          <button>Discover</button>
+          <NavLink to="/" onClick={() =>{window.location="/Discover"}} >
+          <button >Discover</button>
               </NavLink>
          
           <hr></hr>

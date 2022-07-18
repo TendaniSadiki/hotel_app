@@ -1,5 +1,7 @@
 import React from 'react';
 import Popup from 'reactjs-popup';
+import { db } from "../../firebase-config";
+import { set,  ref } from "firebase/database";
 import 'reactjs-popup/dist/index.css'
 import { useState } from "react";
 const PopUp = () =>{
@@ -14,15 +16,22 @@ if(mm<10){
   mm='0'+mm
 } 
 today = yyyy+'-'+mm+'-'+dd;
-    const [startDate, setStartDate] = useState("");
-    const [expireDate, setExDate] = useState("");
+    const [checkInDate, setcheckInDate] = useState("");
+    const [checkOutDate, setExDate] = useState("");
+    const [adults, setAdult] = useState("");
+    const [children, setChildren] = useState("");
     const [dateDate, setDate] = useState("");
 
     const writeToDatabase = () => {
        
-    
         setDate("");
-        console.log(setDate)
+        set(ref(db, `BookInfo`), {
+
+          checkInDate: checkInDate,
+          checkOutDate: checkOutDate,
+          adults: adults,
+          children: children
+        });
       };
 
     return(
@@ -31,21 +40,28 @@ today = yyyy+'-'+mm+'-'+dd;
         <label>Check In</label>
         <input type="date"  min={today}
             id="date"
-            value={startDate}
+            value={checkInDate}
             onChange={(text) => {
-              setStartDate(text.target.value);
+              setcheckInDate(text.target.value);
             }}></input>
         <label>Check Out</label>
         <input type="date"  id="date"
-        min={startDate}
-          value={expireDate}
+        min={checkInDate}
+          value={checkOutDate}
           onChange={(text) => {
             setExDate(text.target.value);
           }}></input>
         <label>Adults</label>
-        <input type="number" min={1}></input>
+        <input type="number" min={1} value={adults}
+         
+          onChange={(text) => {
+            setAdult(text.target.value);
+          }}></input>
         <label>Children</label>
-        <input type="number" min={0}></input>
+        <input type="number" min={0} value={children}
+          onChange={(text) => {
+            setChildren(text.target.value);
+          }}></input>
         <button onChange={(e) => setDate(e.target.value)}
         onClick={writeToDatabase} >Check for Rooms</button>
       </div>
