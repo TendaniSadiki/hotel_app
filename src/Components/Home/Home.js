@@ -21,7 +21,18 @@ export default function Home(   ){
 
     
     const [tempUidd, setTempUidd] = useState("");
+    const [ojbHandler, setObjHandler] = useEffect();
+    const arrObj = [];
   
+   useEffect(() => {
+      setObjHandler(arrObj);
+      console.log('useEffect called');
+  
+    // 👇️ disable the rule for a single line
+  
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
     useEffect(() => {
       auth.onAuthStateChanged((user) => {
         if (user) {
@@ -33,12 +44,14 @@ get(child(dbRef, `Hotels`)).then((snapshot) => {
     const Key = snapshot.key;
     const Data = snapshot.val();
     snapshot.forEach((Data) => {
-      const childKeys = Data.key;
       const childDatas = Data.val();
-      let results =  Data.val();
+      let results =  childDatas;
       let arr = [];
       const obj  = results;
       arr.push(obj);
+
+      arrObj.push(arr)
+      console.log(arrObj);
       console.log(arr);
       push(ref(db, `HotelInfo`), {
         hotelInformation: arr
@@ -51,10 +64,9 @@ get(child(dbRef, `Hotels`)).then((snapshot) => {
      
        
       })
-      // ...
-      
+
     })
-    
+    setObjHandler("");
   } else {
     console.log("No data available");
   }
@@ -66,9 +78,9 @@ get(child(dbRef, `Hotels`)).then((snapshot) => {
             window.location="/Login";
         }
       });
-    }, []);
+    }, [arrObj]);
     
-  
+
     // add
    
 
@@ -80,7 +92,6 @@ return(
       <br></br>
       <br></br>
       <br></br>
-      <br></br>
       <div className='bookButton' >
           
           <PopUp/>
@@ -88,10 +99,10 @@ return(
       </div>
       
       <div className="imgContent">
-        <img className="headerImg" src={headerImg}></img>
+        <img className="headerImg" src={headerImg} alt="image"></img>
         <h1>Welcome</h1>
       </div>
-      
+      {arrObj.map((objHandler)=>(
       <div className="viewRooms">
         <br></br>
 
@@ -107,13 +118,15 @@ return(
           <NavLink to="/" onClick={() =>{window.location="/Discover"}} >
           <button >Discover</button>
               </NavLink>
+            <br></br>
+            <span>{objHandler}</span>
          
           <hr></hr>
           </div>
        
         </div>
         <div className="viewRoomsInfo">
-        <img src={familRoom} alt="Sea View" className="imgTwo"></img>
+        <img src={familRoom} alt="Family View" className="imgTwo"></img>
           <div className="viewRoomBtns">
           <button>Book</button>
           <br></br>
@@ -126,7 +139,7 @@ return(
          
         </div>
         <div className="viewRoomsInfo">
-        <img src={exclusiveRoom} alt="Sea View" className="imgThree"></img>
+        <img src={exclusiveRoom} alt="Exclusive View" className="imgThree"></img>
           < div className="viewRoomBtns">
           <button>Book</button>
           <br></br>
@@ -138,6 +151,7 @@ return(
           
         </div>
       </div>
+      ))}
       <br></br>
       <br></br>
       <br></br>

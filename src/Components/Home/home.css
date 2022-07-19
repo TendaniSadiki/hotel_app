@@ -1,3 +1,5 @@
+
+
 *{
   padding: 0;
   margin: 0;
@@ -5,7 +7,238 @@
 body{
   position: relative;
   width: 100%;
-  height: 5054px;
+  height:100%;
+  
+  background: #F6F5F3;
+  }
+  :root {
+    --shadow: #43a047;
+    --scrollbarBG: #eee;
+    --thumbBG: #66bb6a;
+  }
+  ::-webkit-scrollbar {
+    width: 16px;
+    display: none;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--scrollbarBG);
+    
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--thumbBG);
+    box-shadow: 0 -100vh 0 100vh var(--shadow), 0 0 15px 5px black;
+  }
+  .home {
+      height: 140px;
+      position:inherit;
+      margin-bottom: 90px;
+      margin-top: 40px   ;
+   }
+   .headerImg{
+    
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    margin-top: 1%;
+    
+   }
+   .bookButton {
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    margin: 0px 50px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    position: fixed;
+    background: #D9D9D9;
+    margin-top: -60px;
+    
+    
+    
+    }
+    .bookButton span{
+     
+      
+      
+    }
+    .bookNow{
+      color: #000000;
+    }
+    .imgContent h1{
+      position: absolute;
+      top: 120%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #FFFFFF;
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 48px;
+      
+    }
+    .viewRooms{
+      height: 472px;
+      left: 0px;
+      text-align: center;
+      width: 100%;
+   
+    
+      
+    }
+    .viewRooms h1{
+      font-family: 'Inter';
+      font-weight: 400;
+      font-size: 10px;
+      line-height: 48px;
+    }
+    .viewRoomsInfo{
+      width: 33.3%;
+      margin: auto;
+      display: inline-block;
+      padding: auto;
+     
+    }
+    .viewRooms img{ 
+      width: 33.3%;
+      height: 258px;
+      left: 27px;
+      
+    }
+  
+    .viewRooms .book{
+      
+    }
+    .viewRooms .viewRoomBtns{
+      
+   
+    }
+    .viewRoomBtns span{
+      font-weight: bold;
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 40px;
+     
+    }
+    
+    .viewRoomBtns button{
+      border: none;
+      color: #000000;
+      padding: 12px 22px;
+      text-align: center;
+      font-size: 15px;
+      margin:5px;
+      transition-duration: 0.4s;
+      cursor: pointer;
+      background: #FFFFFF;
+    
+    
+    }
+    .viewRooms h1 {
+      font-family: 'Inter';
+      font-style: bold;
+      font-weight: 700;
+      font-size: 40px;
+      line-height: 48px;
+  }
+    .viewRoomBtns .ourServices{
+      font-size:40px;
+    }
+    .viewRoomBtns .ourServices{
+      font-size:40px;
+    }
+    .viewRoomBtns h1{
+      font-size:50px;
+    }
+    .roomInfo{
+      width: 100%;      
+      height: 500px;
+      margin-top: 70px;
+    }
+    .roomRight{
+      height: 100%;
+    }
+    .roomLeft img{
+      width: 100%;
+    }
+    .roomLeft img, .roomRight{
+      height: 500px;
+    }
+    .roomLeft{
+      height: 654px;
+      width: 50%;
+      background: #43a047;
+      float: left;
+      height: 100%;
+    }
+    .roomRight ul li{
+      list-style: none;
+      font-size: 1.5rem;
+      margin-top: 20px;
+      display: block;
+      margin: auto;
+    }
+    .roomRight ul li h1{
+      margin: auto;
+    }
+    .roomRight{
+      width: 50%;
+      height: 654px;
+      height: 100%;
+      background: #F6F5F3;
+      float: right;
+      text-align: center;
+    }
+    
+    .roomRightSec{
+      height: 100%;
+    }
+    .roomLeftSec img{
+      width: 100%;
+    }
+    .roomLeftSec img, .roomRightSec{
+      height: 500px;
+    }
+    .roomLeftSec{
+      height: 654px;
+      width: 50%;
+      background: #43a047;
+      float: left;
+      height: 100%;
+    }
+    .roomRightSec ul li{
+      list-style: none;
+      font-size: 1.5rem;
+      margin-top: 20px;
+      display: block;
+      margin: auto;
+    }
+    .roomRightSec ul li h1{
+      margin: auto;
+    }
+    .roomRightSec{
+      width: 50%;
+      height: 500px;
+      height: 100%;
+      background: #F6F5F3;
+      float: left;
+      text-align: center;
+    }
+@media only screen and (min-width: 1200px) {
+        
+
+*{
+  padding: 0;
+  margin: 0;
+}
+body{
+  position: relative;
+  width: 100%;
+  height:100%;
   
   background: #F6F5F3;
   }
@@ -91,7 +324,7 @@ body{
       font-family: 'Inter';
       font-style: bold;
       font-weight: 700;
-      font-size: 40px;
+      font-size: 10px;
       line-height: 48px;
     }
     .viewRoomsInfo{
@@ -227,7 +460,8 @@ body{
       float: left;
       text-align: center;
     }
-
+    
+    }
    
    
    @media screen and (min-width: 400px) {

@@ -1,6 +1,4 @@
 
-import { NavLink } from "react-router-dom";
-
 import Room1 from '../images/room1.jpg';
 import seaView from '../images/sea-view-deluxe-suite.jpg';
 import familRoom from '../images/familyroom.jpg'
@@ -9,7 +7,7 @@ import exclusiveRoom from '../images/exclusive-room.jpg'
 
 
 
-import bar from '../images/bar.jpg'
+
 
 
 function SeaView() {
