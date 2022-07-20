@@ -21,40 +21,48 @@ export default function Home(   ){
 
     
     const [tempUidd, setTempUidd] = useState("");
+    const [ojbHandler, setObjHandler] = useState([]);
+    const arrObj = [];
   
     useEffect(() => {
-      auth.onAuthStateChanged((user) => {
-        if (user) {
-          // read
-          const dbRef = ref(getDatabase());
-get(child(dbRef, `Hotels`)).then((snapshot) => {
-  if (snapshot.exists()) {
-    console.log(snapshot.val());
-    const Key = snapshot.key;
-    const Data = snapshot.val();
-    snapshot.forEach((Data) => {
-      const childKeys = Data.key;
-      const childDatas = Data.val();
-      let results =  Data.val();
-      let arr = [];
-      const obj  = results;
-      arr.push(obj);
-      console.log(arr);
-      push(ref(db, `HotelInfo`), {
-        hotelInformation: arr
-        
-      });
       
-      Data.forEach((childDatas) =>{
-        const Datas = childDatas.key;
-        const Keys = childDatas.val();
+          // read
+      const dbRef = ref(getDatabase());
+      get(child(dbRef, `Hotels`)).then((snapshot) => {
+     if (snapshot.exists()) {
+      console.log(snapshot.val());
+      let keys = Object.keys(snapshot.val())
+      const Key = snapshot.key;
+      const Data = snapshot.val();
+
+      let arr = []
+      for (var x = 0; x < keys.length; x++){
+        arr.push(Data[keys[x]])
+      }
+      console.log(arr)
+      setObjHandler(arr);
+
+    //   snapshot.forEach((Data) => {
+    //   const childDatas = Data.val();
+    //   let results =  childDatas;
+    //   let arr = [];
+    //   const obj  = results;
+    //   arrObj.push(arr)
+    //   console.log(arrObj);
+
+    //   console.log(arr);
+
+    //   // Data.forEach((childDatas) =>{
+    //   //   const Datas = childDatas.key;
+    //   //   const Keys = childDatas.val();
      
        
-      })
-      // ...
+    //   // })
+
       
-    })
-    
+
+    // })
+     
   } else {
     console.log("No data available");
   }
@@ -62,13 +70,11 @@ get(child(dbRef, `Hotels`)).then((snapshot) => {
   console.error(error);
 });
         
-        } else if (!user) {
-            window.location="/Login";
-        }
-      });
-    }, []);
+        
+      },[]);
+    ;
     
-  
+
     // add
    
 
@@ -80,7 +86,6 @@ return(
       <br></br>
       <br></br>
       <br></br>
-      <br></br>
       <div className='bookButton' >
           
           <PopUp/>
@@ -88,7 +93,7 @@ return(
       </div>
       
       <div className="imgContent">
-        <img className="headerImg" src={headerImg}></img>
+        <img className="headerImg" src={headerImg} alt="image"></img>
         <h1>Welcome</h1>
       </div>
       
@@ -98,46 +103,27 @@ return(
         <h1>View Rooms</h1>
         <br></br>
         <br></br>
-        
-        <div className="viewRoomsInfo">
-          <img src={seaView} alt="Sea View" className="imgOne"></img>
+        {ojbHandler.map((room, inx)=>(
+        <div className="viewRoomsInfo" key={inx}>
+          <img src={room.image} alt="Room images" className="imgOne"></img>
           <div className="viewRoomBtns">
+            
           <button>Book</button>
           <br></br>
           <NavLink to="/" onClick={() =>{window.location="/Discover"}} >
           <button >Discover</button>
               </NavLink>
-         
+            <br></br>
+            
+            <h3>{room.name}</h3>
           <hr></hr>
           </div>
        
         </div>
-        <div className="viewRoomsInfo">
-        <img src={familRoom} alt="Sea View" className="imgTwo"></img>
-          <div className="viewRoomBtns">
-          <button>Book</button>
-          <br></br>
-          <NavLink to="/" onClick={() =>{window.location="/FamilyDeluxe"}} >
-          <button>Discover</button>
-              </NavLink>
-
-          <hr></hr>
-          </div>
-         
-        </div>
-        <div className="viewRoomsInfo">
-        <img src={exclusiveRoom} alt="Sea View" className="imgThree"></img>
-          < div className="viewRoomBtns">
-          <button>Book</button>
-          <br></br>
-          <NavLink to="/" onClick={() =>{window.location="/Exclusive"}} >
-          <button>Discover</button>
-              </NavLink>
-          <hr></hr>
-          </div>
-          
-        </div>
+       
+       ))}
       </div>
+      
       <br></br>
       <br></br>
       <br></br>
@@ -224,5 +210,3 @@ return(
     </div>
     );
 }
-
-
