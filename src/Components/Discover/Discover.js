@@ -10,7 +10,7 @@ import exclusiveRoom from '../images/exclusive-room.jpg'
 
 
 
-function SeaView() {
+function SeaView(props) {
   return (
     <div className="home">
     <br></br>
