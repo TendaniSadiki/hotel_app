@@ -12,7 +12,7 @@ import lobby from '../images/LeNegresco-LeChantecler_5.jpg'
 import bathImg from '../images/LeNegresco_JuniorSuiteVueMer_2.jpg'
 import bar from '../images/bar.jpg'
 
-export default function Home(   ){ 
+export default function Home(){ 
 
     
    
@@ -69,8 +69,7 @@ export default function Home(   ){
       },[]);
       
     
-    
-
+  
     // add
    
 

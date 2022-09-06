@@ -5,11 +5,6 @@ import familRoom from '../images/familyroom.jpg'
 import exclusiveRoom from '../images/exclusive-room.jpg'
 
 
-
-
-
-
-
 function SeaView(props) {
   return (
     <div className="home">
