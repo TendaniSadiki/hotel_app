@@ -141,7 +141,7 @@ const Signup = () => {
                 Sign Up
               </button>
               <div className="message"></div>
-              <NavLink to="./Login" className="NavLink" exact>
+              <NavLink to="/Login" className="NavLink" exact>
                 <span>
                   <i>Sign In</i>
                 </span>

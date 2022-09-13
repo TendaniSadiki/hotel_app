@@ -57,7 +57,8 @@ const AuthRoutes = () =>{
             :
             //Offline Handler
             <Routes>
-                    <Route exact path="*" element={<Login/>}/>
+                    <Route exact path="*" element={<Home/>}/>
+                    <Route exact path="/" element={<Home/>}/>
                     <Route exact path="/Signup" element={<SIgnup/>}/>
                     <Route exact path="/Login" element={<Login/>}/>
                 </Routes>

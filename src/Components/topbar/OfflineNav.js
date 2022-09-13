@@ -1,16 +1,24 @@
 import React from 'react'
 import "./topbar.css";
 /*Offline Nav Bar*/
-function OfflineNav() {
+import {NavLink} from 'react-router-dom';
+function OfflineNav(props) {
     return (
-        <div className="linksContainer">
-            <br></br>
-            <br></br>
-            <br></br>
-            <h1>Welcome</h1>
-            <h3>Login to explore</h3>
-            <div className="rightNav" >Hotel App</div>
-        </div>
+        <div className="linksContainer">  
+                    <div className='leftNavContent'>
+                    <h1 >Logo</h1>
+                    </div>
+                    <div className="rightNavContent">
+                    <NavLink to="*" activestyle={{color: 'black'}} exact onClick={() => props.isMobile && props.closeMobileMenu()}><span></span>
+                    </NavLink>
+                    <NavLink to="./"  activestyle={{color: 'black'}} exact onClick={() => {props.isMobile && props.closeMobileMenu(); window.location="/Home"}}><span><i>Home</i></span>
+                    </NavLink>
+                    <NavLink to="./" activestyle={{color: 'black'}} exact onClick={() =>{ props.isMobile && props.closeMobileMenu(); window.location="/Login"}} ><span><i >Login</i></span>
+                    </NavLink>
+                    
+                    </div>
+                   
+            </div>
     )
 }
 

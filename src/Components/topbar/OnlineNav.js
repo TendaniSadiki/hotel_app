@@ -51,7 +51,7 @@ const logout = async () =>{
                     </NavLink>
                     </div>
                    
-                    </div>
+            </div>
         </div>
     )
 }
