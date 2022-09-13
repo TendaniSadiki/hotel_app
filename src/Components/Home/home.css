@@ -59,11 +59,13 @@ body{
     
     
     }
+    /*
     .bookButton span{
      
       
       
     }
+    */
     .bookNow{
       color: #000000;
     }
@@ -108,7 +110,7 @@ body{
       left: 27px;
       
     }
-  
+  /*
     .viewRooms .book{
       
     }
@@ -116,6 +118,7 @@ body{
       
    
     }
+    */
     .viewRoomBtns span{
       font-weight: bold;
       font-family: 'Inter';
@@ -290,11 +293,13 @@ body{
     
     
     }
+    /*
     .bookButton span{
      
       
       
     }
+    */
     .bookNow{
       color: #000000;
     }
@@ -340,7 +345,7 @@ body{
       left: 27px;
       
     }
-  
+  /*
     .viewRooms .book{
       
     }
@@ -348,6 +353,7 @@ body{
       
    
     }
+    */
     .viewRoomBtns span{
       font-weight: bold;
       font-family: 'Inter';

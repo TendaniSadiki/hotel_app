@@ -12,7 +12,7 @@ const firebaseConfig = {
   appId: "1:458163058897:web:bf6b90c8c058d0b8836df0"
   };
   
-  
+  console.log(process.env)
   const app = initializeApp(firebaseConfig);
 export  const auth = getAuth(app);
 export const db = getDatabase(app);

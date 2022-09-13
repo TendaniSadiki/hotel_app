@@ -1,21 +1,20 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState ,useContext} from "react";
 import "./home.css";
 import { NavLink } from "react-router-dom";
 import { auth, db} from "../../firebase-config";
 import { getDatabase, ref, child, get } from "firebase/database";
 
 import PopUp from "../Popup/Popup";
-
 import headerImg from '../images/284680_110923172739440.jpg';
 import roundHouse from '../images/LaRotonde_Site_Actu_248x248-VCC_5.jpg'
 import lobby from '../images/LeNegresco-LeChantecler_5.jpg'
 import bathImg from '../images/LeNegresco_JuniorSuiteVueMer_2.jpg'
 import bar from '../images/bar.jpg'
-
-export default function Home(   ){ 
-
+import { UserContext } from "../../Auth/Routes";
+export default function Home(){ 
+const objRoom=useContext(UserContext)
     
-   
+   console.log("from routes page",objRoom);
     const [ojbHandler, setObjHandler] = useState([]);
     const arrObj = [];
   
@@ -69,8 +68,7 @@ export default function Home(   ){
       },[]);
       
     
-    
-
+  
     // add
    
 
@@ -107,7 +105,7 @@ return(
           <button>Book</button>
           <br></br>
           <NavLink to="/" onClick={() =>{window.location="/Discover"}} >
-          <button >Discover</button>
+          <button  >Discover</button>
               </NavLink>
             <br></br>
             

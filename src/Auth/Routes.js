@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { createContext, useState } from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
@@ -16,9 +16,10 @@ import Rooms from '../Components/Rooms/Rooms';
 import Discover from '../Components/Discover/Discover';
 
 
-
+const  UserContext=createContext()
 const AuthRoutes = () =>{
     const [loginState, setLoginState] = useState(null);
+    const [Objrooms,getObjRooms]=useState([{room:"Gold room",price:4000}]);
     const auth = getAuth();
     onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -33,6 +34,8 @@ const AuthRoutes = () =>{
     });
     return(
 //Router
+<UserContext.Provider value={Objrooms}>
+
         <Router>
             {
             loginState ?
@@ -44,7 +47,7 @@ const AuthRoutes = () =>{
                 <Route exact path="/Book" element={<Book/>}/>
                 {
                 //Offline Handler
-                }
+            }
                 <Route exact path="/Discover" element={<Discover/>}/>
                 <Route exact path="/SeaView" element={<SeaView/>}/>
                 <Route exact path="/FamilyDeluxe" element={<FamilyDeluxe/>}/>
@@ -53,15 +56,16 @@ const AuthRoutes = () =>{
                 </Routes>
             :
             //Offline Handler
-                <Routes>
+            <Routes>
                     <Route exact path="*" element={<Login/>}/>
                     <Route exact path="/Signup" element={<SIgnup/>}/>
                     <Route exact path="/Login" element={<Login/>}/>
                 </Routes>
             }
         </Router>
+            </UserContext.Provider>
     )
 }
 
 export default AuthRoutes;
-    
+ export {UserContext}   
