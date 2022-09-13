@@ -105,7 +105,7 @@ return(
           <button>Book</button>
           <br></br>
           <NavLink to="/" onClick={() =>{window.location="/Discover"}} >
-          <button >Discover</button>
+          <button  >Discover</button>
               </NavLink>
             <br></br>
             
