@@ -17,7 +17,9 @@ const objRoom=useContext(UserContext)
    console.log("from routes page",objRoom);
     const [ojbHandler, setObjHandler] = useState([]);
     const arrObj = [];
-  
+  const viewmore = ()=>{
+    
+  }
     useEffect(() => {
       
           // read
@@ -98,13 +100,14 @@ return(
         <br></br>
         <br></br>
         {ojbHandler.map((room, inx)=>(
+        
         <div className="viewRoomsInfo" key={inx}>
           <img src={room.image} alt="Room images" className="imgOne"></img>
           <div className="viewRoomBtns">
             
           <button>Book</button>
           <br></br>
-          <NavLink to="/" onClick={() =>{window.location="/Discover"}} >
+          <NavLink to="/Discover" onClick={viewmore} >
           <button  >Discover</button>
               </NavLink>
             <br></br>
